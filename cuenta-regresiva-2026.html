@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Año Nuevo 2026 - Frank Castillo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Montserrat:wght@400;700;900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #020617;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 70%, #020617 100%);
+            color: #f8fafc;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        /* Efecto de Oro 3D Pulido con Brillo de Espejo */
+        .gold-3d-luxury {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(
+                -45deg, 
+                #bf953f 0%, 
+                #b38728 22%, 
+                #fcf6ba 45%, 
+                #ffffff 50%, 
+                #fcf6ba 55%, 
+                #b38728 78%, 
+                #bf953f 100%
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+            filter: 
+                drop-shadow(0 1px 0px #aa771c)
+                drop-shadow(0 2px 0px #8a5e14)
+                drop-shadow(0 3px 0px #6d4a10)
+                drop-shadow(0 4px 0px #50360d)
+                drop-shadow(0 15px 30px rgba(0,0,0,0.9));
+            
+            animation: mirror-shine 3s linear infinite;
+        }
+
+        @keyframes mirror-shine {
+            to { background-position: 200% center; }
+        }
+
+        /* Animación para el mensaje final */
+        .celebration-text {
+            animation: pulse-gold 2s ease-in-out infinite alternate, mirror-shine 3s linear infinite;
+            background-size: 200% auto;
+        }
+
+        @keyframes pulse-gold {
+            from { transform: scale(1); filter: brightness(1) drop-shadow(0 0 20px rgba(191,149,63,0.5)); }
+            to { transform: scale(1.05); filter: brightness(1.2) drop-shadow(0 0 50px rgba(252,246,186,0.8)); }
+        }
+
+        .label-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.5em;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            color: rgba(234, 179, 8, 0.7);
+        }
+
+        .timer-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(191, 149, 63, 0.4);
+            box-shadow: inset 0 0 20px rgba(191, 149, 63, 0.15), 0 20px 50px rgba(0, 0, 0, 0.9);
+            transition: all 0.5s ease;
+        }
+
+        #star-field {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; 
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .glamour-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #bf953f, #fcf6ba, #bf953f, transparent);
+            width: 100%;
+            max-width: 450px;
+            margin: 1.5rem auto;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        .fade-out { opacity: 0; transform: scale(0.9); transition: all 1s ease; }
+        .fade-in { opacity: 1; transform: scale(1); transition: all 1.5s ease; }
+    </style>
+</head>
+<body>
+
+    <div id="star-field"></div>
+
+    <div id="main-content" class="content-wrapper w-full max-w-4xl px-6 text-center">
+        <h2 class="text-sm md:text-xl label-heading mb-2 uppercase">CUENTA REGRESIVA</h2>
+        
+        <h1 class="text-7xl md:text-9xl gold-3d-luxury mb-4 tracking-tighter">2026</h1>
+        
+        <div class="mb-10 space-y-2">
+            <p class="text-[10px] md:text-xs tracking-[0.4em] text-white/70 font-bold uppercase">
+                Elaborado, dise&ntilde;ado y tra&iacute;do a ti por:
+            </p>
+            <p class="text-2xl md:text-4xl gold-3d-luxury italic font-semibold" style="animation-duration: 6s; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));">Frank Castillo</p>
+            <p class="text-[10px] md:text-xs text-white/50 tracking-[0.25em] uppercase font-medium">
+                Desarrollador Web <span class="text-yellow-600/50 mx-1">|</span> Ingeniero de Prompts <span class="text-yellow-600/50 mx-1">|</span> Lenguaje de IA
+            </p>
+            <div class="glamour-line"></div>
+        </div>
+        
+        <div id="countdown-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            <div class="timer-card p-8 rounded-[2rem]">
+                <div id="days" class="text-5xl md:text-8xl font-bold text-white tracking-tighter">00</div>
+                <div class="text-[10px] text-yellow-600/90 font-bold uppercase mt-3 tracking-[0.4em]">D&iacute;as</div>
+            </div>
+            <div class="timer-card p-8 rounded-[2rem]">
+                <div id="hours" class="text-5xl md:text-8xl font-bold text-white tracking-tighter">00</div>
+                <div class="text-[10px] text-yellow-600/90 font-bold uppercase mt-3 tracking-[0.4em]">Horas</div>
+            </div>
+            <div class="timer-card p-8 rounded-[2rem]">
+                <div id="minutes" class="text-5xl md:text-8xl font-bold text-white tracking-tighter">00</div>
+                <div class="text-[10px] text-yellow-600/90 font-bold uppercase mt-3 tracking-[0.4em]">Minutos</div>
+            </div>
+            <div class="timer-card p-8 rounded-[2rem]">
+                <div id="seconds" class="text-5xl md:text-8xl font-bold text-white tracking-tighter">00</div>
+                <div class="text-[10px] text-yellow-600/90 font-bold uppercase mt-3 tracking-[0.4em]">Segundos</div>
+            </div>
+        </div>
+
+        <div class="space-y-3 opacity-50">
+            <p class="text-[11px] font-semibold tracking-[0.5em] uppercase text-white">Caracas, Venezuela</p>
+            <p class="text-[10px] tracking-[0.3em] italic">Hora Legal de Venezuela (HLV)</p>
+        </div>
+    </div>
+
+    <script>
+        function createStarField() {
+            const field = document.getElementById('star-field');
+            const starCount = 180;
+            const colors = ['#ffffff', '#fcf6ba', '#bf953f', '#fde047'];
+
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 2 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                star.style.backgroundColor = color;
+                star.style.boxShadow = `0 0 ${size * 2}px ${color}`;
+                star.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                star.style.animationDelay = (Math.random() * 5) + 's';
+                field.appendChild(star);
+            }
+        }
+
+        const targetDate = new Date("January 1, 2026 00:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance <= 0) {
+                showCelebration();
+                return;
+            }
+
+            const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if (document.getElementById('days')) {
+                document.getElementById('days').innerText = d.toString().padStart(2, '0');
+                document.getElementById('hours').innerText = h.toString().padStart(2, '0');
+                document.getElementById('minutes').innerText = m.toString().padStart(2, '0');
+                document.getElementById('seconds').innerText = s.toString().padStart(2, '0');
+            }
+        }
+
+        function showCelebration() {
+            const container = document.getElementById('main-content');
+            if (!container || container.dataset.celebrated === "true") return;
+            
+            container.dataset.celebrated = "true";
+            container.classList.add('fade-out');
+            
+            setTimeout(() => {
+                container.innerHTML = `
+                    <div class="fade-in px-4">
+                        <h2 class="text-xl md:text-3xl label-heading mb-6 tracking-[0.5em]">¡BIENVENIDO!</h2>
+                        <h1 class="text-6xl md:text-[8rem] lg:text-[10rem] gold-3d-luxury celebration-text leading-tight mb-8">
+                            FELIZ AÑO<br>2026
+                        </h1>
+                        <div class="glamour-line"></div>
+                        <div class="max-w-2xl mx-auto">
+                            <p class="text-white text-lg md:text-2xl tracking-[0.15em] font-light uppercase italic leading-relaxed">
+                                QUE LA BENDICIÓN DE DIOS TE ACOMPAÑE EN ESTE NUEVO AÑO CON MUCHA FORTALEZA, OPTIMISMO Y OPORTUNIDADES, ES EL DESEO DE FRANK CASTILLO
+                            </p>
+                        </div>
+                        <p class="mt-16 text-yellow-600/70 text-[10px] tracking-[0.4em] uppercase font-bold">Caracas, Venezuela &bull; 01-01-2026</p>
+                    </div>
+                `;
+                container.classList.remove('fade-out');
+            }, 1000);
+        }
+
+        window.onload = () => {
+            createStarField();
+            updateCountdown();
+            const timer = setInterval(() => {
+                const now = new Date().getTime();
+                if (targetDate - now <= 0) {
+                    clearInterval(timer);
+                    showCelebration();
+                } else {
+                    updateCountdown();
+                }
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
